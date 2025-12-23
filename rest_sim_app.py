@@ -1490,42 +1490,31 @@ st.divider()
 st.header("📞 ¿Necesitas Ayuda?")
 
 # Contact section with WhatsApp
-col1, col2 = st.columns([2, 1])
+st.subheader("💬 Contáctanos por WhatsApp")
 
-with col1:
-    st.subheader("💬 Contáctanos por WhatsApp")
-    
-    st.write("""
-    ¿Tienes dudas sobre la plataforma EZ-TEK o necesitas asesoría personalizada?
-    
-    **Nuestro equipo está listo para ayudarte con:**
-    
-    ✅ Configuración de tu restaurante
-    ✅ Interpretación de métricas
-    ✅ Estrategias de optimización
-    ✅ Planes de expansión
-    ✅ Integración con sistemas existentes
-    
-    **¡Escríbenos ahora y recibe respuesta inmediata!**
-    """)
-    
-    # WhatsApp button
-    st.link_button(
-        "💬 Abrir WhatsApp",
-        "https://wa.link/kr9cxy",
-        use_container_width=True,
-        type="primary"
-    )
-    
-    st.info("📱 Horario de atención: Lunes a Viernes 9:00 AM - 6:00 PM")
+st.write("""
+¿Tienes dudas sobre la plataforma EZ-TEK o necesitas asesoría personalizada?
 
-with col2:
-    try:
-        st.image("bec40d_73763839349548eea3489210b8ecf59b~mv2.png", 
-                 caption="WhatsApp EZ-TEK", 
-                 use_container_width=True)
-    except:
-        st.write("📱")
+**Nuestro equipo está listo para ayudarte con:**
+
+✅ Configuración de tu restaurante
+✅ Interpretación de métricas
+✅ Estrategias de optimización
+✅ Planes de expansión
+✅ Integración con sistemas existentes
+
+**¡Escríbenos ahora y recibe respuesta inmediata!**
+""")
+
+# WhatsApp button
+st.link_button(
+    "💬 Abrir WhatsApp",
+    "https://wa.link/kr9cxy",
+    use_container_width=True,
+    type="primary"
+)
+
+st.success("📱 Atención 24/7 - Disponible todos los días")
 
 # =============================================================================
 # COMPREHENSIVE EXCEL DOWNLOAD SECTION - HIDDEN
