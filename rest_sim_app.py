@@ -1484,12 +1484,56 @@ st.markdown("""
 st.divider()
 
 # =============================================================================
-# COMPREHENSIVE EXCEL DOWNLOAD SECTION - UPDATED
+# CONTACT SECTION - WHATSAPP
 # ==============================================================================
 
-st.header("📥 Descargar Análisis Completo en Excel")
+st.header("📞 ¿Necesitas Ayuda?")
 
-# Create comprehensive Excel export
+# Contact section with WhatsApp
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    st.subheader("💬 Contáctanos por WhatsApp")
+    
+    st.write("""
+    ¿Tienes dudas sobre la plataforma EZ-TEK o necesitas asesoría personalizada?
+    
+    **Nuestro equipo está listo para ayudarte con:**
+    
+    ✅ Configuración de tu restaurante
+    ✅ Interpretación de métricas
+    ✅ Estrategias de optimización
+    ✅ Planes de expansión
+    ✅ Integración con sistemas existentes
+    
+    **¡Escríbenos ahora y recibe respuesta inmediata!**
+    """)
+    
+    # WhatsApp button
+    st.link_button(
+        "💬 Abrir WhatsApp",
+        "https://wa.link/kr9cxy",
+        use_container_width=True,
+        type="primary"
+    )
+    
+    st.info("📱 Horario de atención: Lunes a Viernes 9:00 AM - 6:00 PM")
+
+with col2:
+    try:
+        st.image("bec40d_73763839349548eea3489210b8ecf59b~mv2.png", 
+                 caption="WhatsApp EZ-TEK", 
+                 use_container_width=True)
+    except:
+        st.write("📱")
+
+# =============================================================================
+# COMPREHENSIVE EXCEL DOWNLOAD SECTION - HIDDEN
+# ==============================================================================
+
+# st.header("📥 Descargar Análisis Completo en Excel")
+
+# Create comprehensive Excel export (hidden but functional)
 def create_comprehensive_excel():
     """Create a comprehensive Excel file with all app data and analysis"""
     output = io.BytesIO()
@@ -2006,81 +2050,81 @@ def create_comprehensive_excel():
     
     return output.getvalue()
 
-# Display download section
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.subheader("📊 Análisis Completo del Restaurante")
-    
-    # Count total sheets
-    sheet_count = 6  # Base sheets
-    if st.session_state.scenarios:
-        sheet_count += 1  # Scenario comparison
-        if len(st.session_state.scenarios) > 1:
-            sheet_count += 1  # Improvements analysis
-    sheet_count += 1  # Executive summary
-    
-    st.write(f"""
-    **El archivo Excel incluye {sheet_count} hojas con:**
-    
-    📋 **Configuración**: Todos los parámetros del restaurante
-    📊 **Métricas Principales**: KPIs y fórmulas de cálculo
-    📅 **Análisis Semanal**: Desglose por día de la semana
-    💹 **Estructura P&L**: Estado de resultados detallado
-    🚀 **Proyección Expansión**: Escalabilidad del negocio
-    📈 **Análisis Sensibilidad**: Punto de equilibrio y escenarios
-    """)
-    
-    if st.session_state.scenarios:
-        st.write(f"""
-        🔄 **Comparación Escenarios**: {len(st.session_state.scenarios)} escenarios analizados
-        """)
-        
-        if len(st.session_state.scenarios) > 1:
-            st.write("""
-            📈 **Análisis de Mejoras**: Comparación detallada vs baseline
-            """)
-    
-    st.write("""
-    📋 **Resumen Ejecutivo**: Dashboard completo con métricas clave
-    """)
-
-with col2:
-    st.subheader("⬇️ Descargar")
-    
-    # Generate filename
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    scenarios_suffix = f"_{len(st.session_state.scenarios)}escenarios" if st.session_state.scenarios else ""
-    filename = f"Restaurant_Analysis_Complete_{timestamp}{scenarios_suffix}.xlsx"
-    
-    # Download button
-    excel_data = create_comprehensive_excel()
-    
-    st.download_button(
-        label="📥 Descargar Análisis Completo",
-        data=excel_data,
-        file_name=filename,
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        use_container_width=True,
-        help=f"Descarga un archivo Excel completo con {sheet_count} hojas de análisis"
-    )
-    
-    st.info(f"**Archivo:** {filename}")
-    st.success(f"✅ **{sheet_count} hojas** de análisis completo")
-
-# HIDDEN: Contenido del Archivo Excel description
-# st.divider()
-# st.markdown("""
-# ### 📁 Contenido del Archivo Excel:
-# - **Configuración completa** del restaurante con todos los parámetros
-# - **Métricas financieras** con fórmulas y explicaciones
-# - **Análisis operativo** por día de la semana
-# - **Estado de resultados** detallado y cascada P&L
-# - **Proyecciones de expansión** para múltiples ubicaciones
-# - **Análisis de sensibilidad** con punto de equilibrio
-# - **Comparación de escenarios** (si existen)
-# - **Análisis de mejoras** vs baseline (si aplica)
-# - **Resumen ejecutivo** con métricas clave
+# HIDDEN: Display download section
+# col1, col2 = st.columns([2, 1])
 # 
-# Este reporte ejecutivo está listo para presentaciones gerenciales y toma de decisiones estratégicas.
+# with col1:
+#     st.subheader("📊 Análisis Completo del Restaurante")
+#     
+#     # Count total sheets
+#     sheet_count = 6  # Base sheets
+#     if st.session_state.scenarios:
+#         sheet_count += 1  # Scenario comparison
+#         if len(st.session_state.scenarios) > 1:
+#             sheet_count += 1  # Improvements analysis
+#     sheet_count += 1  # Executive summary
+#     
+#     st.write(f"""
+#     **El archivo Excel incluye {sheet_count} hojas con:**
+#     
+#     📋 **Configuración**: Todos los parámetros del restaurante
+#     📊 **Métricas Principales**: KPIs y fórmulas de cálculo
+#     📅 **Análisis Semanal**: Desglose por día de la semana
+#     💹 **Estructura P&L**: Estado de resultados detallado
+#     🚀 **Proyección Expansión**: Escalabilidad del negocio
+#     📈 **Análisis Sensibilidad**: Punto de equilibrio y escenarios
+#     """)
+#     
+#     if st.session_state.scenarios:
+#         st.write(f"""
+#         🔄 **Comparación Escenarios**: {len(st.session_state.scenarios)} escenarios analizados
+#         """)
+#         
+#         if len(st.session_state.scenarios) > 1:
+#             st.write("""
+#             📈 **Análisis de Mejoras**: Comparación detallada vs baseline
+#             """)
+#     
+#     st.write("""
+#     📋 **Resumen Ejecutivo**: Dashboard completo con métricas clave
+#     """)
+# 
+# with col2:
+#     st.subheader("⬇️ Descargar")
+#     
+#     # Generate filename
+#     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+#     scenarios_suffix = f"_{len(st.session_state.scenarios)}escenarios" if st.session_state.scenarios else ""
+#     filename = f"Restaurant_Analysis_Complete_{timestamp}{scenarios_suffix}.xlsx"
+#     
+#     # Download button
+#     excel_data = create_comprehensive_excel()
+#     
+#     st.download_button(
+#         label="📥 Descargar Análisis Completo",
+#         data=excel_data,
+#         file_name=filename,
+#         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+#         use_container_width=True,
+#         help=f"Descarga un archivo Excel completo con {sheet_count} hojas de análisis"
+#     )
+#     
+#     st.info(f"**Archivo:** {filename}")
+#     st.success(f"✅ **{sheet_count} hojas** de análisis completo")
+# 
+# # HIDDEN: Contenido del Archivo Excel description
+# # st.divider()
+# # st.markdown("""
+# # ### 📁 Contenido del Archivo Excel:
+# # - **Configuración completa** del restaurante con todos los parámetros
+# # - **Métricas financieras** con fórmulas y explicaciones
+# # - **Análisis operativo** por día de la semana
+# # - **Estado de resultados** detallado y cascada P&L
+# # - **Proyecciones de expansión** para múltiples ubicaciones
+# # - **Análisis de sensibilidad** con punto de equilibrio
+# # - **Comparación de escenarios** (si existen)
+# # - **Análisis de mejoras** vs baseline (si aplica)
+# # - **Resumen ejecutivo** con métricas clave
+# # 
+# # Este reporte ejecutivo está listo para presentaciones gerenciales y toma de decisiones estratégicas.
 # """)
