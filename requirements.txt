@@ -1,0 +1,44 @@
+# Enhanced TLP App Requirements
+# =================================
+
+# Core Web Framework
+streamlit>=1.28.0
+
+plotly>=5.15.0
+# Data Processing & Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Database
+pymongo>=4.3.3
+
+# AWS Services
+boto3>=1.28.0
+botocore>=1.31.0
+
+# AI/ML Services  
+openai>=1.0.0
+
+# File Processing & Image Handling
+Pillow>=10.0.0
+PyPDF2>=3.0.0
+
+# Data Visualization
+plotly>=5.15.0
+
+# Excel File Processing
+xlsxwriter>=3.1.0
+
+# Environment Variables (for local development)
+python-dotenv>=1.0.0
+
+# Standard Library Dependencies (included with Python):
+# - datetime (built-in)
+# - hashlib (built-in)  
+# - os (built-in)
+# - tempfile (built-in)
+# - io (built-in)
+# - zipfile (built-in)
+
+
+
