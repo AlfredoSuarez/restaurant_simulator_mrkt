@@ -36,7 +36,7 @@ if "username" not in st.session_state:
 
 # Login form disabled - direct access enabled
 # if not st.session_state["authenticated"]:
-#     st.title("🔒 SMESA Restaurant Simulator Login")
+#     st.title("🔒 EZ-TEK Restaurant Simulator Login")
 #     with st.form("login_form"):
 #         username = st.text_input("Usuario")
 #         password = st.text_input("Contraseña", type="password")
@@ -179,7 +179,7 @@ comision_bancaria = st.sidebar.slider(
 )
 
 fee_plataforma = st.sidebar.slider(
-    "Fee SMESA (%)", 
+    "Fee EZ-TEK (%)", 
     min_value=0.0, 
     max_value=15.0, 
     value=5.0, 
@@ -610,7 +610,7 @@ with tab2:
         name = "P&L",
         orientation = "v",
         measure = ["relative", "relative", "relative", "relative", "relative", "total"],
-        x = ["Ingresos Brutos", "Comisión Bancaria", "Fee SMESA", "Costo Ingredientes", "Costos Fijos", "Utilidad Neta"],
+        x = ["Ingresos Brutos", "Comisión Bancaria", "Fee EZ-TEK", "Costo Ingredientes", "Costos Fijos", "Utilidad Neta"],
         textposition = "outside",
         text = [f"${rentabilidad['ingresos_brutos']:,.0f}", 
                 f"-${rentabilidad['costo_comision_bancaria']:,.0f}",
@@ -640,7 +640,7 @@ with tab2:
         'Concepto': [
             'Ingresos Brutos',
             'Comisión Bancaria',
-            'Fee EZ-TEK', 
+            'Fee SMESA', 
             'Costo Ingredientes',
             'Total Costos Variables',
             'Contribución Marginal',
@@ -1493,7 +1493,7 @@ st.header("📞 ¿Necesitas Ayuda?")
 st.subheader("💬 Contáctanos por WhatsApp")
 
 st.write("""
-¿Tienes dudas sobre la plataforma SMESA o necesitas asesoría personalizada?
+¿Tienes dudas sobre la plataforma EZ-TEK o necesitas asesoría personalizada?
 
 **Nuestro equipo está listo para ayudarte con:**
 
