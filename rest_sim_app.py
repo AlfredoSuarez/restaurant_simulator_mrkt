@@ -640,7 +640,7 @@ with tab2:
         'Concepto': [
             'Ingresos Brutos',
             'Comisión Bancaria',
-            'Fee SMESA', 
+            'Fee EZ-TEK', 
             'Costo Ingredientes',
             'Total Costos Variables',
             'Contribución Marginal',
@@ -1128,7 +1128,7 @@ if st.session_state.scenarios:
     
     df_scenarios = pd.DataFrame(scenarios_df)
     
-    # Display comparison table (Enhanced version like SMESA)
+    # Display comparison table (Enhanced version like EZ-TEK)
     st.subheader("📊 Tabla de Comparación de Escenarios")
     
     # Create formatted display dataframe
@@ -1146,7 +1146,7 @@ if st.session_state.scenarios:
         use_container_width=True
     )
     
-    # Detailed breakdown for each scenario (Like SMESA tabs)
+    # Detailed breakdown for each scenario (Like EZ-TEK tabs)
     st.divider()
     st.header("🔍 Desglose Detallado del Escenario")
     
@@ -1244,14 +1244,14 @@ if st.session_state.scenarios:
                 st.write(f"Rotación de Mesas: {scenario['rotacion_diaria']}")
                 st.write(f"Ticket Promedio: ${scenario['ticket_promedio']}")
             
-            # Resumen P&L (Mejorado como SMESA)
+            # Resumen P&L (Mejorado como EZ-TEK)
             st.subheader("💼 Resumen P&L del Restaurante")
             
             pl_data = {
                 'Concepto': [
                     'Ingresos',
                     'Comisión Bancaria',
-                    'Fee SMESA',
+                    'Fee EZ-TEK',
                     'Costo de Alimentos',
                     'Total Costos Variables',
                     'Margen de Contribución',
@@ -1283,7 +1283,7 @@ if st.session_state.scenarios:
             df_pl = pd.DataFrame(pl_data)
             st.dataframe(df_pl, hide_index=True, use_container_width=True)
     
-    # Sección de visualización (Mejorada como SMESA)
+    # Sección de visualización (Mejorada como EZ-TEK)
     st.divider()
     st.header("📊 Análisis Visual")
     
@@ -1417,7 +1417,7 @@ if st.session_state.scenarios:
         
         st.plotly_chart(fig3, use_container_width=True)
     
-    # Análisis de la Propuesta de Valor (Como la sección de ROI de SMESA)
+    # Análisis de la Propuesta de Valor (Como la sección de ROI de EZ-TEK)
     st.divider()
     st.header("💡 Análisis del Impacto en el Rendimiento")
     
@@ -1576,7 +1576,7 @@ def create_comprehensive_excel():
                 'Mesas Domingo',
                 'Total Mesas Semana',
                 'Comisión Bancaria (%)',
-                'Fee SMESA (%)',
+                'Fee EZ-TEK (%)',
                 'Costo Ingredientes (%)',
                 'Personal (MXN)',
                 'Renta y Servicios (MXN)',
@@ -1627,7 +1627,7 @@ def create_comprehensive_excel():
                 'Órdenes Mensuales',
                 'Ingresos Brutos',
                 'Costo Comisión Bancaria',
-                'Costo Fee SMESA',
+                'Costo Fee EZ-TEK',
                 'Costo Ingredientes',
                 'Total Costos Variables',
                 'Contribución Marginal',
@@ -1698,7 +1698,7 @@ def create_comprehensive_excel():
             'Concepto': [
                 'Ingresos Brutos',
                 'Comisión Bancaria',
-                'Fee SMESA',
+                'Fee EZ-TEK',
                 'Costo Ingredientes',
                 'Total Costos Variables',
                 'Contribución Marginal',
