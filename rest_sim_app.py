@@ -36,7 +36,7 @@ if "username" not in st.session_state:
 
 # Login form disabled - direct access enabled
 # if not st.session_state["authenticated"]:
-#     st.title("🔒 EZ-TEK Restaurant Simulator Login")
+#     st.title("🔒 SMESA Restaurant Simulator Login")
 #     with st.form("login_form"):
 #         username = st.text_input("Usuario")
 #         password = st.text_input("Contraseña", type="password")
@@ -59,7 +59,7 @@ if 'baseline_set' not in st.session_state:
 
 # Configuración de la página
 st.set_page_config(
-    page_title="EZ-TEK Restaurant Simulator", 
+    page_title="SMESA Restaurant Simulator", 
     page_icon="🍽️", 
     layout="wide",
     initial_sidebar_state="expanded"
@@ -179,7 +179,7 @@ comision_bancaria = st.sidebar.slider(
 )
 
 fee_plataforma = st.sidebar.slider(
-    "Fee EZ-TEK (%)", 
+    "Fee SMESA (%)", 
     min_value=0.0, 
     max_value=15.0, 
     value=5.0, 
@@ -610,7 +610,7 @@ with tab2:
         name = "P&L",
         orientation = "v",
         measure = ["relative", "relative", "relative", "relative", "relative", "total"],
-        x = ["Ingresos Brutos", "Comisión Bancaria", "Fee EZ-TEK", "Costo Ingredientes", "Costos Fijos", "Utilidad Neta"],
+        x = ["Ingresos Brutos", "Comisión Bancaria", "Fee SMESA", "Costo Ingredientes", "Costos Fijos", "Utilidad Neta"],
         textposition = "outside",
         text = [f"${rentabilidad['ingresos_brutos']:,.0f}", 
                 f"-${rentabilidad['costo_comision_bancaria']:,.0f}",
@@ -640,7 +640,7 @@ with tab2:
         'Concepto': [
             'Ingresos Brutos',
             'Comisión Bancaria',
-            'Fee EZ-TEK', 
+            'Fee SMESA', 
             'Costo Ingredientes',
             'Total Costos Variables',
             'Contribución Marginal',
@@ -1128,7 +1128,7 @@ if st.session_state.scenarios:
     
     df_scenarios = pd.DataFrame(scenarios_df)
     
-    # Display comparison table (Enhanced version like EZ-TEK)
+    # Display comparison table (Enhanced version like SMESA)
     st.subheader("📊 Tabla de Comparación de Escenarios")
     
     # Create formatted display dataframe
@@ -1146,7 +1146,7 @@ if st.session_state.scenarios:
         use_container_width=True
     )
     
-    # Detailed breakdown for each scenario (Like EZ-TEK tabs)
+    # Detailed breakdown for each scenario (Like SMESA tabs)
     st.divider()
     st.header("🔍 Desglose Detallado del Escenario")
     
@@ -1244,14 +1244,14 @@ if st.session_state.scenarios:
                 st.write(f"Rotación de Mesas: {scenario['rotacion_diaria']}")
                 st.write(f"Ticket Promedio: ${scenario['ticket_promedio']}")
             
-            # Resumen P&L (Mejorado como EZ-TEK)
+            # Resumen P&L (Mejorado como SMESA)
             st.subheader("💼 Resumen P&L del Restaurante")
             
             pl_data = {
                 'Concepto': [
                     'Ingresos',
                     'Comisión Bancaria',
-                    'Fee EZ-TEK',
+                    'Fee SMESA',
                     'Costo de Alimentos',
                     'Total Costos Variables',
                     'Margen de Contribución',
@@ -1283,7 +1283,7 @@ if st.session_state.scenarios:
             df_pl = pd.DataFrame(pl_data)
             st.dataframe(df_pl, hide_index=True, use_container_width=True)
     
-    # Sección de visualización (Mejorada como EZ-TEK)
+    # Sección de visualización (Mejorada como SMESA)
     st.divider()
     st.header("📊 Análisis Visual")
     
@@ -1417,7 +1417,7 @@ if st.session_state.scenarios:
         
         st.plotly_chart(fig3, use_container_width=True)
     
-    # Análisis de la Propuesta de Valor (Como la sección de ROI de EZ-TEK)
+    # Análisis de la Propuesta de Valor (Como la sección de ROI de SMESA)
     st.divider()
     st.header("💡 Análisis del Impacto en el Rendimiento")
     
@@ -1493,7 +1493,7 @@ st.header("📞 ¿Necesitas Ayuda?")
 st.subheader("💬 Contáctanos por WhatsApp")
 
 st.write("""
-¿Tienes dudas sobre la plataforma EZ-TEK o necesitas asesoría personalizada?
+¿Tienes dudas sobre la plataforma SMESA o necesitas asesoría personalizada?
 
 **Nuestro equipo está listo para ayudarte con:**
 
@@ -1576,7 +1576,7 @@ def create_comprehensive_excel():
                 'Mesas Domingo',
                 'Total Mesas Semana',
                 'Comisión Bancaria (%)',
-                'Fee EZ-TEK (%)',
+                'Fee SMESA (%)',
                 'Costo Ingredientes (%)',
                 'Personal (MXN)',
                 'Renta y Servicios (MXN)',
@@ -1627,7 +1627,7 @@ def create_comprehensive_excel():
                 'Órdenes Mensuales',
                 'Ingresos Brutos',
                 'Costo Comisión Bancaria',
-                'Costo Fee EZ-TEK',
+                'Costo Fee SMESA',
                 'Costo Ingredientes',
                 'Total Costos Variables',
                 'Contribución Marginal',
@@ -1698,7 +1698,7 @@ def create_comprehensive_excel():
             'Concepto': [
                 'Ingresos Brutos',
                 'Comisión Bancaria',
-                'Fee EZ-TEK',
+                'Fee SMESA',
                 'Costo Ingredientes',
                 'Total Costos Variables',
                 'Contribución Marginal',
